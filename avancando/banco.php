@@ -17,7 +17,38 @@ $contasCorrentes['535.353.425-32'] = sacar($contasCorrentes['535.353.425-32'], 5
 $contasCorrentes['535.353.425-32'] = depositar($contasCorrentes['535.353.425-32'], 1500);
 
 titularComLetrasMaiusculas($contasCorrentes['423.534.687-77']);
+unset($contasCorrentes['535.353.425-32']);
 
-foreach ($contasCorrentes as $cpf => $conta) {
-  exibeMensagem("$cpf => {$conta['titular']} {$conta['saldo']}");
-};
+// foreach ($contasCorrentes as $cpf => $conta) {
+//   exibeConta($conta);
+// };
+?>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+
+<body>
+
+</body>
+<h1>Contas Correntes</h1>
+
+<ul>
+  <dl>
+    <?php foreach ($contasCorrentes as $cpf => $conta) { ?>
+      <dt>
+        <h3><?= $conta['titular']; ?> - <?= $cpf; ?></h3>
+      </dt>
+      <dd>Saldo: <?= $conta['saldo']; ?></dd>
+    <?php } ?>
+  </dl>
+</ul>
+
+</html>

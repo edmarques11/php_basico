@@ -2,7 +2,7 @@
 
 function exibeMensagem(string $mensagem): void
 {
-  echo $mensagem . PHP_EOL;
+  echo $mensagem . '<br />';
 }
 
 function sacar(array $conta, float $valor): array
@@ -29,4 +29,10 @@ function depositar(array $conta, float $valor): array
 function titularComLetrasMaiusculas(array &$conta): void
 {
   $conta['titular'] = mb_strtoupper($conta['titular']);
+}
+
+function exibeConta(array $conta): void
+{
+  ['titular' => $titular, 'saldo' => $saldo] = $conta;
+  echo "<li>Titular: $titular. Saldo: {$conta['saldo']}</li>";
 }
